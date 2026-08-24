@@ -1,4 +1,24 @@
-import { useId } from 'react'
+const photos: Record<string, string> = {
+  hero: '/images/hero.jpg',
+  kitchen: '/images/kitchen.jpg',
+  about: '/images/about.jpg',
+  tasting: '/images/tasting.jpg',
+  tasting2: '/images/tasting2.jpg',
+  beet: '/images/beet.jpg',
+  tartare: '/images/tartare.jpg',
+  herring: '/images/herring.jpg',
+  soup: '/images/soup.jpg',
+  pike: '/images/pike.jpg',
+  duck: '/images/duck.jpg',
+  veg: '/images/veg.jpg',
+  lamb: '/images/lamb.jpg',
+  apple: '/images/apple.jpg',
+  chocolate: '/images/chocolate.jpg',
+  cheesecake: '/images/cheesecake.jpg',
+  spritz: '/images/spritz.jpg',
+  liqueur: '/images/liqueur.jpg',
+  kombucha: '/images/kombucha.jpg',
+}
 
 type Props = {
   src: string
@@ -7,18 +27,11 @@ type Props = {
 }
 
 export function Photo({ src, alt, className }: Props) {
-  const id = useId().replace(/:/g, '')
+  const url = photos[src] ?? photos.tasting
 
   return (
-    <div className={`photo ${className ?? ''}`} role="img" aria-label={alt}>
-      <div className={`photo-art photo-art--${src}`} />
-      <svg className="photo-grain" aria-hidden="true">
-        <filter id={`grain-${id}`}>
-          <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch" />
-          <feColorMatrix type="saturate" values="0" />
-        </filter>
-        <rect width="100%" height="100%" filter={`url(#grain-${id})`} opacity="0.18" />
-      </svg>
+    <div className={`photo ${className ?? ''}`}>
+      <img src={url} alt={alt} loading="lazy" />
     </div>
   )
 }

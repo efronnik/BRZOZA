@@ -458,176 +458,26 @@ body.cursor-hover .cursor-ring {
   }
 }
 
-/* Photos — local, never broken */
-.photo,
-.photo-art {
+.photo {
   width: 100%;
   height: 100%;
   min-height: 100%;
-}
-
-.photo {
   overflow: hidden;
   background: #2a261c;
   position: relative;
 }
 
-.photo-grain {
-  position: absolute;
-  inset: 0;
+.photo img {
   width: 100%;
   height: 100%;
-  pointer-events: none;
-  mix-blend-mode: overlay;
-}
-
-.photo-art {
-  position: relative;
-  transform: scale(1.02);
+  object-fit: cover;
+  display: block;
   transition: transform 0.8s var(--ease);
 }
 
-.feature-card:hover .photo-art,
-.menu-card:hover .photo-art {
-  transform: scale(1.08);
-}
-
-.photo-art::before,
-.photo-art::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.photo-art--hero {
-  background:
-    radial-gradient(ellipse 80% 55% at 70% 40%, rgba(196, 165, 116, 0.35), transparent 55%),
-    radial-gradient(ellipse 50% 40% at 20% 80%, rgba(92, 107, 18, 0.45), transparent 50%),
-    linear-gradient(160deg, #1c1812 0%, #3a3328 42%, #15130f 100%);
-}
-.photo-art--hero::before {
-  background:
-    radial-gradient(circle at 30% 60%, rgba(246, 236, 217, 0.08) 0 18%, transparent 19%),
-    radial-gradient(circle at 62% 48%, rgba(246, 236, 217, 0.12) 0 12%, transparent 13%),
-    radial-gradient(circle at 74% 58%, rgba(246, 236, 217, 0.07) 0 8%, transparent 9%);
-}
-
-.photo-art--kitchen {
-  background:
-    radial-gradient(circle at 40% 45%, #8a6a3a 0 14%, transparent 15%),
-    radial-gradient(ellipse at 70% 30%, rgba(255, 180, 80, 0.25), transparent 45%),
-    linear-gradient(180deg, #2b2418 0%, #4a3b28 100%);
-}
-
-.photo-art--about {
-  background:
-    radial-gradient(circle at 50% 38%, #c4a574 0 10%, transparent 11%),
-    radial-gradient(ellipse at 50% 70%, #5c6b12 0 22%, transparent 23%),
-    linear-gradient(180deg, #3d3426, #1a1814);
-}
-
-.photo-art--tasting {
-  background:
-    radial-gradient(circle at 50% 48%, #efe3cd 0 16%, transparent 17%),
-    radial-gradient(circle at 50% 48%, #5c6b12 18% 28%, transparent 29%),
-    linear-gradient(145deg, #2a261c, #4a4336);
-}
-
-.photo-art--tasting2 {
-  background:
-    radial-gradient(circle at 35% 40%, #d7c4a0 0 12%, transparent 13%),
-    radial-gradient(circle at 68% 58%, #6b4b2a 0 16%, transparent 17%),
-    linear-gradient(160deg, #241f18, #3f382c);
-}
-
-.photo-art--beet {
-  background:
-    radial-gradient(circle at 50% 52%, #8a2f45 0 22%, #5c1c2c 23% 34%, transparent 35%),
-    linear-gradient(160deg, #2a1a1c, #4a3030);
-}
-
-.photo-art--tartare {
-  background:
-    radial-gradient(circle at 48% 50%, #7a3030 0 18%, #3d1c1c 19% 30%, transparent 31%),
-    linear-gradient(180deg, #211818, #3a2824);
-}
-
-.photo-art--herring {
-  background:
-    radial-gradient(circle at 50% 48%, #d6cfc4 0 14%, #8aa07a 15% 24%, transparent 25%),
-    linear-gradient(160deg, #2a2c24, #4a4c40);
-}
-
-.photo-art--soup {
-  background:
-    radial-gradient(circle at 50% 55%, #6b4a28 0 24%, #3d2a18 25% 40%, transparent 41%),
-    linear-gradient(180deg, #241c14, #3a2e22);
-}
-
-.photo-art--pike {
-  background:
-    radial-gradient(ellipse at 50% 45%, #c9b48a 0 18%, transparent 19%),
-    radial-gradient(circle at 50% 62%, #5c6b12 0 14%, transparent 15%),
-    linear-gradient(160deg, #1f2418, #3a4030);
-}
-
-.photo-art--duck {
-  background:
-    radial-gradient(circle at 52% 48%, #8a4a28 0 20%, #5c2e18 21% 32%, transparent 33%),
-    linear-gradient(180deg, #241814, #3d2a22);
-}
-
-.photo-art--veg {
-  background:
-    radial-gradient(circle at 40% 45%, #6b8a32 0 16%, transparent 17%),
-    radial-gradient(circle at 62% 58%, #c4a574 0 12%, transparent 13%),
-    linear-gradient(160deg, #222818, #3d4630);
-}
-
-.photo-art--lamb {
-  background:
-    radial-gradient(ellipse at 50% 50%, #a06040 0 18%, #5c3020 19% 30%, transparent 31%),
-    linear-gradient(180deg, #1c1410, #3a2820);
-}
-
-.photo-art--apple {
-  background:
-    radial-gradient(circle at 50% 55%, #d4a05a 0 18%, #8a5a28 19% 28%, transparent 29%),
-    linear-gradient(160deg, #2a2014, #4a3824);
-}
-
-.photo-art--chocolate {
-  background:
-    radial-gradient(circle at 50% 50%, #4a2818 0 20%, #2a1810 21% 34%, transparent 35%),
-    radial-gradient(circle at 62% 38%, #8a3040 0 8%, transparent 9%),
-    linear-gradient(180deg, #1a1210, #3a241c);
-}
-
-.photo-art--cheesecake {
-  background:
-    radial-gradient(ellipse at 50% 48%, #efe3cd 0 22%, #c4a574 23% 32%, transparent 33%),
-    linear-gradient(160deg, #2a2418, #4a4030);
-}
-
-.photo-art--spritz {
-  background:
-    radial-gradient(circle at 50% 42%, #f0c070 0 10%, transparent 11%),
-    radial-gradient(circle at 50% 58%, rgba(246, 236, 217, 0.35) 0 16%, transparent 17%),
-    linear-gradient(180deg, #3d4a20, #1c2012);
-}
-
-.photo-art--liqueur {
-  background:
-    radial-gradient(circle at 50% 45%, #6b2040 0 12%, transparent 13%),
-    radial-gradient(circle at 50% 70%, #c4a574 0 8%, transparent 9%),
-    linear-gradient(180deg, #241018, #3a1828);
-}
-
-.photo-art--kombucha {
-  background:
-    radial-gradient(circle at 50% 50%, #c9b48a 0 14%, rgba(246, 236, 217, 0.2) 15% 26%, transparent 27%),
-    linear-gradient(160deg, #2a2818, #4a4830);
+.feature-card:hover .photo img,
+.menu-card:hover .photo img {
+  transform: scale(1.06);
 }
 
 /* Hero */
